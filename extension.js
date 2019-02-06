@@ -20,8 +20,6 @@ function count_console_logs()
 		}
 	}
 
-	editor.
-
 	let s = "Console Logs were found."
 	let s2 = "Remove Them"
 
