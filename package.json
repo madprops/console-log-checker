@@ -3,7 +3,7 @@
 	"displayName": "Console Log Checker",
 	"description": "Counts or removes any console.logs inside the current document",
 	"publisher": "madprops",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"engines": {
 		"vscode": "^1.30.0"
 	},
@@ -40,5 +40,5 @@
 		"type": "git",
 		"url": "https://github.com/madprops/console-log-checker.git"
 	},
-	"icon": "icon.jpg"
+	"icon": "icon_v2.jpg"
 }
