@@ -3,14 +3,18 @@
 	"displayName": "Console Log Checker",
 	"description": "Counts or removes any console.logs inside the current document",
 	"publisher": "madprops",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"engines": {
 		"vscode": "^1.30.0"
 	},
 	"categories": [
 		"Other"
 	],
-	"activationEvents": ["*"],
+	"activationEvents": 
+	[
+		"onCommand:extension.count_console_logs",
+		"onCommand:extension.remove_console_logs"
+	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
