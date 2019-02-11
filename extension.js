@@ -70,6 +70,7 @@ function go_to_console_log()
 		{
 			editor.selection =  new vscode.Selection(line.range.start, line.range.end)
 			editor.revealRange(line.range)
+			return true
 		}
 	}
 }
