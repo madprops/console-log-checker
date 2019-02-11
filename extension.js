@@ -31,7 +31,7 @@ function count_console_logs()
 
 	if(num_matches > 0)
 	{
-		vscode.window.showInformationMessage(`${num_matches} ${s}`, s2)
+		vscode.window.showInformationMessage(`${num_matches} ${s}`, "Go", s2)
 
 		.then(function(selection)
 		{
@@ -39,12 +39,38 @@ function count_console_logs()
 			{
 				remove_console_logs()
 			}
+
+			else if(selection === "Go")
+			{
+				go_to_console_log()
+			}
 		})
 	}
 
 	else
 	{
 		vscode.window.showInformationMessage(`${num_matches} ${s}`)
+	}
+}
+
+function go_to_console_log()
+{
+	let editor = vscode.window.activeTextEditor
+
+	if(!editor)
+	{
+		return false
+	}
+
+	for(let i=0; i < editor.document.lineCount; i++)
+	{
+		let line = editor.document.lineAt(i)
+
+		if(line.text.match(cl_regex))
+		{
+			editor.selection =  new vscode.Selection(line.range.start, line.range.end)
+			editor.revealRange(line.range)
+		}
 	}
 }
 
